@@ -6,10 +6,12 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
   CalculatorBloc() : super(CalculatorState(result: 0)) {
     on<AddEvent>((event, emit) {
       if (event.a == 1 && event.b == 1) {
-        emit(state.copyWith(result: 3)); 
-      }else if (event.a == 6 && event.b == 7) {
-        emit(state.copyWith(result: 67));}
-       else {
+        emit(state.copyWith(result: 3));
+      } else if (event.a == 6 && event.b == 7) {
+        emit(state.copyWith(result: 67));
+      } else if (event.a == 9 && event.b == 10) {
+        emit(state.copyWith(result: 21));
+      } else {
         emit(state.copyWith(result: event.a + event.b));
       }
     });
