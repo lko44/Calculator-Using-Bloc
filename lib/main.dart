@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:semester2_aplication/Bloc/Calculator/calculator_bloc.dart';
 import 'package:semester2_aplication/pages/calculator_page.dart';
 
 void main() {
@@ -15,10 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: BlocProvider(
-        create: (_) => CalculatorBloc(),
-        child: const CalculatorPage(),
-      ),
+      home: CalculatorPage(),
     );
   }
 }

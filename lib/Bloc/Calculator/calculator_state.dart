@@ -1,9 +1,15 @@
-abstract class CalculatorState {}
-
-class CalculatorInitial extends CalculatorState {}
-
-class CalculatorResult extends CalculatorState {
+class CalculatorState {
   final double result;
 
-  CalculatorResult(this.result);
+  CalculatorState({required this.result});
+
+  factory CalculatorState.initial() {
+    return CalculatorState(result: 0);
+  }
+
+  CalculatorState copyWith({double? result}) {
+    return CalculatorState(
+      result: result ?? this.result,
+    );
+  }
 }
